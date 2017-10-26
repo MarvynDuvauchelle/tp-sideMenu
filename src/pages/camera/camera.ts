@@ -10,6 +10,8 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 })
 export class CameraPage {
 
+    base64Image:String;
+
   constructor(public navCtrl: NavController, private camera: Camera, private base64ToGallery: Base64ToGallery) {
   }
 
@@ -24,8 +26,8 @@ runCamera() {
   this.camera.getPicture(this.options).then((imageData) => {
   // imageData is either a base64 encoded string or a file URI
   // If it's base64:
-  let base64Image = 'data:image/jpeg;base64,' + imageData;
-  this.saveInGallery(base64Image);
+  this.base64Image = 'data:image/jpeg;base64,' + imageData;
+  this.saveInGallery(this.base64Image);
   }, (err) => {
   // Handle error
   });
