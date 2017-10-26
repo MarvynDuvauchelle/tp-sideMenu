@@ -26,7 +26,7 @@ runCamera() {
   this.camera.getPicture(this.options).then((imageData) => {
   // imageData is either a base64 encoded string or a file URI
   // If it's base64:
-  this.base64Image = 'data:image/jpeg;base64,' + imageData;
+  this.base64Image = imageData;
   this.saveInGallery(this.base64Image);
   }, (err) => {
   // Handle error
