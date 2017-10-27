@@ -9,5 +9,5 @@
 
 <ion-content padding>
   <button ion-button secondary (click)="runCamera()">Camera</button>
-  <img src="{{base64Image}}">
+  <img [src]="base64Image" ng-if="base64Image">
 </ion-content>

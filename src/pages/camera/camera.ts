@@ -39,10 +39,10 @@ runCamera() {
   this.camera.getPicture(this.options).then((imageData) => {
     /* Si la photo a été prise et si elle est encodée en base64 */
     /* On la stock dans notre variable base64Image */
-  this.base64Image = imageData;
+  this.base64Image = 'data:image/jpeg;base64,' + imageData;
 
   /* On utilise la fonction saveInGallery afin d'enregistrer l'image prise dans la galerie du téléphone */
-  this.saveInGallery(this.base64Image);
+  this.saveInGallery(imageData);
 }, (err) => {
     /* Si il y a un soucis, on retourne l'erreur */
   });
