@@ -1,8 +1,8 @@
 {
   "name": "sideTest",
-  "app_id": "3df490f1",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "app_id": "3df490f1"
 }
