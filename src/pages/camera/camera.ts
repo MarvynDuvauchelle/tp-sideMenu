@@ -55,7 +55,7 @@ runCamera() {
 }, (err) => {
     /* Si il y a un soucis, on retourne l'erreur */
   });
-}
+} 
 
 /* Fonction permettant de sauvegarder une photo dans la galerie d'un téléphone */
 /* Param : base64Data -> Image encodée en base64 */
