@@ -15,7 +15,7 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
+import { MediaCapture } from '@ionic-native/media-capture';
 
 @NgModule({
   declarations: [

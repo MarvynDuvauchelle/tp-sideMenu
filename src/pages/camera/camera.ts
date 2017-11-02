@@ -13,8 +13,6 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
-
 /* Liste des components */
 @Component({
   selector: 'page-camera',
@@ -25,10 +23,10 @@ export class CameraPage {
 
 /* Déclaration d'une variable base64 */
   base64Image: String;
-  video: any;
+
 
 /* Déclaration du constructeur, avec en paramètre nos plugins */
-    constructor(public navCtrl: NavController, private camera: Camera, private base64ToGallery: Base64ToGallery, private localNotifications: LocalNotifications, private mediaCapture: MediaCapture) {
+    constructor(public navCtrl: NavController, private camera: Camera, private base64ToGallery: Base64ToGallery, private localNotifications: LocalNotifications) {
   }
 
 /* Options pour la caméra */
@@ -38,8 +36,6 @@ export class CameraPage {
   encodingType: this.camera.EncodingType.JPEG,
   mediaType: this.camera.MediaType.PICTURE
  }
-
-optionsVideo: CaptureImageOptions = { limit: 3 };
 
 /* Fonction permettant de lancer la caméra */
 runCamera() {
@@ -60,14 +56,6 @@ runCamera() {
     /* Si il y a un soucis, on retourne l'erreur */
   });
 }
-
-runVideo() {
-  this.mediaCapture.captureImage(this.optionsVideo)
-    .then(
-    (data: MediaFile[]) => this.video = data[0].fullPath,
-    (err: CaptureError) => console.error(err)
-    );
-  }
 
 /* Fonction permettant de sauvegarder une photo dans la galerie d'un téléphone */
 /* Param : base64Data -> Image encodée en base64 */
