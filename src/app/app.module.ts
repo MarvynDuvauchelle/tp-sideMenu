@@ -13,6 +13,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -36,8 +38,8 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
-    Base64ToGallery
-    
+    Base64ToGallery,
+    LocalNotifications
   ]
 })
 export class AppModule {}

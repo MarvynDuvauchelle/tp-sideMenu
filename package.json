@@ -61,7 +61,8 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {}
+      "cordova-plugin-ionic-webview": {},
+      "de.appplant.cordova.plugin.local-notification": {}
     },
     "platforms": [
       "android"

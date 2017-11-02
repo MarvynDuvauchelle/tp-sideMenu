@@ -11,6 +11,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 /* Importation du plugin base64-to-gallery */
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 /* Liste des components */
 @Component({
   selector: 'page-camera',
@@ -23,7 +25,7 @@ export class CameraPage {
     base64Image:String;
 
 /* Déclaration du constructeur, avec en paramètre nos plugins */
-  constructor(public navCtrl: NavController, private camera: Camera, private base64ToGallery: Base64ToGallery) {
+  constructor(public navCtrl: NavController, private camera: Camera, private base64ToGallery: Base64ToGallery, private localNotifications: LocalNotifications) {
   }
 
 /* Options pour la caméra */
@@ -31,8 +33,9 @@ export class CameraPage {
   quality: 100,
   destinationType: this.camera.DestinationType.DATA_URL,
   encodingType: this.camera.EncodingType.JPEG,
-  mediaType: this.camera.MediaType.ALLMEDIA
+  mediaType: this.camera.MediaType.PICTURE
 }
+
 
 /* Fonction permettant de lancer la caméra */
 runCamera() {
@@ -43,6 +46,12 @@ runCamera() {
 
   /* On utilise la fonction saveInGallery afin d'enregistrer l'image prise dans la galerie du téléphone */
   this.saveInGallery(imageData);
+  this.localNotifications.schedule({
+    id: 1,
+    text: 'La notification',
+    data: { secret: "coucou" }
+  });
+
 }, (err) => {
     /* Si il y a un soucis, on retourne l'erreur */
   });
