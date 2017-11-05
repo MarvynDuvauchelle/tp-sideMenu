@@ -15,5 +15,12 @@
 
 
 <ion-content padding>
+  <!-- Bouton pour activer la caméra vidéo -->
   <button ion-button secondary (click)="runVideo()">Video</button>
+
+  <!-- affiche la vidéo prise -->
+  <video [src]="video" autoplay ng-if="video">
+    <a [href]="video">la télécharger</a> !
+  </video>
+
 </ion-content>
